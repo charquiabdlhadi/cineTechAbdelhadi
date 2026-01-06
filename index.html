@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéTech Elite | Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-background"></div>
+    
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="glow-logo">C</div>
+                <span>CINÉ<strong>TECH</strong></span>
+            </div>
+            
+            <nav class="nav-stack">
+                <button id="nav-dashboard" class="nav-link active">
+                    <span class="nav-icon">📊</span> Dashboard
+                </button>
+                <button id="nav-films" class="nav-link">
+                    <span class="nav-icon">🎬</span> Ma Collection
+                </button>
+                <button id="nav-api" class="nav-icon-link nav-link">
+                    <span class="nav-icon">🌍</span> Découverte API
+                </button>
+            </nav>
+
+            <div class="sidebar-status">
+                <div class="status-indicator"></div>
+                <span>BY SKAW</span>
+            </div>
+        </aside>
+
+        <main class="main-stage">
+            
+            <section id="view-dashboard" class="content-view">
+                <div class="welcome-banner">
+                    <h1>Bonjour  👋</h1>
+                    <p>Voici l'analyse de votre catalogue privé.</p>
+                </div>
+
+                <div class="kpi-row">
+                    <div class="neon-card">
+                        <span class="kpi-tag">Total</span>
+                        <h2 id="kpi-total">0</h2>
+                        <p>Films</p>
+                    </div>
+                    <div class="neon-card">
+                        <span class="kpi-tag">Score</span>
+                        <h2 id="kpi-avg">0.0</h2>
+                        <p>Note Moyenne</p>
+                    </div>
+                    <div class="neon-card">
+                        <span class="kpi-tag">Top Réal</span>
+                        <h2 id="kpi-top-real">-</h2>
+                        <p>Réalisateur Favori</p>
+                    </div>
+                </div>
+
+                <div class="chart-section glass-panel">
+                    <h3>Performance de la Collection</h3>
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </section>
+
+            <section id="view-films" class="content-view hidden">
+                <div class="view-header">
+                    <h2>Ma Bibliothèque</h2>
+                    <button id="btn-show-form" class="btn-neon">＋ AJOUTER</button>
+                </div>
+
+                <div id="form-container" class="glass-panel form-popup hidden">
+                    <form id="film-form" class="premium-form">
+                        <div class="input-group">
+                            <input type="text" id="f-title" placeholder="Titre du film" required>
+                            <input type="text" id="f-director" placeholder="Réalisateur" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="f-year" placeholder="Année" required>
+                            <input type="number" id="f-rating" placeholder="Note / 10" step="0.1" required>
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="btn-neon green">SAUVEGARDER</button>
+                            <button type="button" id="btn-hide-form" class="btn-neon">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="glass-panel table-area">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th>Film</th>
+                                <th>Réalisateur</th>
+                                <th>Année</th>
+                                <th>Rating</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="view-api" class="content-view hidden">
+                <div class="api-search-zone">
+                    <input type="text" id="search-input" placeholder="Rechercher un blockbuster ou un classique...">
+                    <button id="btn-search" class="btn-neon">EXPLORER</button>
+                </div>
+                <div id="api-grid" class="movie-grid"></div>
+            </section>
+
+        </main>
+    </div>
+    </div> <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2025 <span>AIA</span>. Tous droits réservés.</p>
+            </div>
+            <div class="footer-center">
+                <span class="footer-badge">API Connected</span>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#">🎬</a>
+                    <a href="#">📊</a>
+                    <a href="#">🌐</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
